@@ -211,7 +211,7 @@ function Nav({ theme, toggleTheme }: { theme: string; toggleTheme: () => void })
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }} className="hamburger" >
+        <div style={{ alignItems: 'center', gap: '0.75rem' }} className="hamburger">
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
