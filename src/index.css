@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #111A16;
+  --surface: #1A2820;
+  --nav: #182019;
+  --nav-scrolled: rgba(17, 26, 22, 0.92);
+  --accent: #6FCF97;
+  --accent-dim: #4AAA78;
+  --text: #E8F0EC;
+  --muted: #6B9080;
+  --border: rgba(111, 207, 151, 0.12);
+}
+
+[data-theme="light"] {
+  --bg: #F4F7F5;
+  --surface: #E8EFE9;
+  --nav: #EDF3EE;
+  --nav-scrolled: rgba(244, 247, 245, 0.94);
+  --accent: #2D7A54;
+  --accent-dim: #256646;
+  --text: #111A16;
+  --muted: #4A6B58;
+  --border: rgba(45, 122, 84, 0.18);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 3px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none !important; }
+  .hamburger { display: block !important; }
+
+  .exp-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  .exp-tabs {
+    flex-direction: row !important;
+    border-left: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    overflow-x: auto !important;
+    padding-bottom: 0 !important;
+  }
+  .exp-tab-btn {
+    border-left: none !important;
+    border-bottom: 2px solid transparent !important;
+    margin-left: 0 !important;
+    white-space: nowrap !important;
+  }
+  .exp-tab-btn.active-tab {
+    border-bottom-color: var(--accent) !important;
+  }
+}
