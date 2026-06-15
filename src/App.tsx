@@ -57,10 +57,10 @@ const EXPERIENCE = [
 const PROJECTS = [
   {
     name: 'Makan Apa?',
-    period: '2025',
+    period: '2026',
     tags: ['React', 'TypeScript', 'Firebase', 'Gemini AI'],
     description:
-      'Real-time collaborative meal planning app built for couples. Features shared grocery lists with live presence, a pantry tracker with AI-powered categorisation (Gemini), recipe discovery with "Cook Tonight" mode, a weekly meal planner, and restock reminders — all synced in real time via Firestore.',
+      'Real-time collaborative grocery and meal planning app for anyone who struggles to decide what to eat. Features shared grocery lists with live presence, a pantry tracker with AI-powered categorisation (Gemini), recipe discovery with "Cook Tonight" mode, a weekly meal planner, and restock reminders — all synced in real time via Firestore.',
     github: 'https://github.com/jarrelltwe/makan-apa',
     live: 'https://grocery4u.vercel.app',
   },
@@ -432,8 +432,23 @@ function Education() {
   return (
     <section id="education" style={{ padding: '4rem 2rem 6rem', maxWidth: 1100, margin: '0 auto' }}>
       <SectionLabel>Education</SectionLabel>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
       <div
         className="reveal reveal-delay-1"
+        style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 10, padding: '1.75rem 2rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', transition: 'border-color 0.2s, transform 0.2s' }}
+        onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+        onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)' }}
+      >
+        <div>
+          <h3 style={{ color: 'var(--text)', fontWeight: 600, fontSize: 18, margin: '0 0 4px' }}>M.S. Artificial Intelligence — Data Analytics</h3>
+          <p style={{ color: 'var(--accent)', fontSize: 15, margin: 0 }}>Indiana Wesleyan University — Marion, IN</p>
+        </div>
+        <span style={{ color: 'var(--muted)', fontFamily: 'monospace', fontSize: 13, whiteSpace: 'nowrap', paddingTop: 2 }}>
+          Aug 2026 – Apr 2028 (expected)
+        </span>
+      </div>
+      <div
+        className="reveal reveal-delay-2"
         style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 10, padding: '1.75rem 2rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', transition: 'border-color 0.2s, transform 0.2s' }}
         onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
         onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)' }}
@@ -466,6 +481,7 @@ function Education() {
         <span style={{ color: 'var(--muted)', fontFamily: 'monospace', fontSize: 13, whiteSpace: 'nowrap', paddingTop: 2 }}>
           Aug 2021 – May 2023
         </span>
+      </div>
       </div>
     </section>
   )
