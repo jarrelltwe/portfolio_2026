@@ -58,9 +58,9 @@ const PROJECTS = [
   {
     name: 'Makan Apa?',
     period: '2026',
-    tags: ['React', 'TypeScript', 'Firebase', 'Gemini AI'],
+    tags: ['React', 'TypeScript', 'Firebase', 'Gemini AI', 'Firestore'],
     description:
-      'Real-time collaborative grocery and meal planning app for anyone who struggles to decide what to eat. Features shared grocery lists with live presence, a pantry tracker with AI-powered categorisation (Gemini), recipe discovery with "Cook Tonight" mode, a weekly meal planner, and restock reminders — all synced in real time via Firestore.',
+      'Real-time collaborative grocery and meal planning app. Shared lists with live presence, activity feeds, recipe imports, and undo-able deletes. Pantry tracker with Fridge/Freezer/Cupboard sections, AI categorisation, expiry alerts, and restock queues. Recipe discovery with Gemini-powered recommendations, ingredient substitutions, Cook Tonight mode, and expiring-ingredient matching. Weekly meal planner with AI-generated plans and auto shopping list export.',
     github: 'https://github.com/jarrelltwe/makan-apa',
     live: 'https://grocery4u.vercel.app',
   },
