@@ -62,7 +62,7 @@ const PROJECTS = [
     description:
       'Pulls Chess.com games into an interactive analysis tool where Stockfish evaluates every move and Claude explains mistakes in plain English. Includes move grading, eval bar, best-move arrows, keyboard navigation, and on-demand coaching for tactical and positional errors.',
     github: 'https://github.com/jarrelltwe/chess-coach',
-    live: 'https://chess-coach.vercel.app',
+    live: 'https://chess-coach-sandy.vercel.app',
   },
   {
     name: 'Makan Apa?',
