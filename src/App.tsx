@@ -56,6 +56,15 @@ const EXPERIENCE = [
 
 const PROJECTS = [
   {
+    name: 'Chess Coach',
+    period: '2026',
+    tags: ['Next.js', 'TypeScript', 'Stockfish', 'Claude'],
+    description:
+      'Pulls Chess.com games into an interactive analysis tool where Stockfish evaluates every move and Claude explains mistakes in plain English. Includes move grading, eval bar, best-move arrows, keyboard navigation, and on-demand coaching for tactical and positional errors.',
+    github: 'https://github.com/jarrelltwe/chess-coach',
+    live: 'https://chess-coach.vercel.app',
+  },
+  {
     name: 'Makan Apa?',
     period: '2026',
     tags: ['React', 'TypeScript', 'Firebase', 'Gemini AI', 'Firestore'],
