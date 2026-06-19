@@ -61,6 +61,7 @@ const PROJECTS = [
     tags: ['Next.js', 'TypeScript', 'Stockfish WASM', 'Claude AI', 'Tailwind'],
     description:
       'Chess improvement platform powered by Stockfish (in-browser WASM) and Claude. Load games from Chess.com, Lichess, or PGN and get every move graded with an interactive eval bar, best-move arrows, and threat overlays. Claude explains mistakes in plain English and answers free-form coaching questions. Features opening drills with bot play, spaced-repetition puzzles generated from your own blunders, stats dashboards with AI weakness summaries, Guess the Move mode, and chess principle detection across your games.',
+    icon: 'chess',
     github: 'https://github.com/jarrelltwe/chess-coach',
     live: 'https://chess-coach-sandy.vercel.app',
   },
@@ -69,7 +70,8 @@ const PROJECTS = [
     period: '2026',
     tags: ['React', 'TypeScript', 'Firebase', 'Gemini AI', 'Firestore'],
     description:
-      'Real-time collaborative grocery and meal planning app. Shared lists with live presence, activity feeds, recipe imports, and undo-able deletes. Pantry tracker with Fridge/Freezer/Cupboard sections, AI categorisation, expiry alerts, and restock queues. Recipe discovery with Gemini-powered recommendations, ingredient substitutions, Cook Tonight mode, and expiring-ingredient matching. Weekly meal planner with AI-generated plans and auto shopping list export.',
+      '"Makan Apa?" is Malay for "What are we eating?" — a real-time collaborative grocery and meal planning app. Shared lists with live presence, activity feeds, recipe imports, and undo-able deletes. Pantry tracker with Fridge/Freezer/Cupboard sections, AI categorisation, expiry alerts, and restock queues. Recipe discovery with Gemini-powered recommendations, ingredient substitutions, Cook Tonight mode, and expiring-ingredient matching. Weekly meal planner with AI-generated plans and auto shopping list export.',
+    icon: 'food',
     github: 'https://github.com/jarrelltwe/makan-apa',
     live: 'https://grocery4u.vercel.app',
   },
@@ -79,6 +81,7 @@ const PROJECTS = [
     tags: ['C', 'Compilers', 'Parsing', 'Academic'],
     description:
       'Designed and implemented a full compiler and parser for a custom programming language. Built execution logic to interpret generated instructions, manage operand memory locations, and support conditional jump operations. Developed parsing that translates source programs into executable instruction sequences using linked-list intermediate representations.',
+    icon: 'terminal',
     github: null,
     live: null,
   },
@@ -550,6 +553,37 @@ function Experience() {
   )
 }
 
+function ProjectIcon({ type }: { type: string }) {
+  const props = { width: 32, height: 32, fill: 'none', stroke: 'var(--accent)', strokeWidth: 1.5, viewBox: '0 0 24 24', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const }
+  switch (type) {
+    case 'chess':
+      return (
+        <svg {...props}>
+          <path d="M12 2a1 1 0 011 1v1h2a1 1 0 010 2h-1l1.5 4H17a2 2 0 012 2v1a2 2 0 01-1 1.73V18a2 2 0 01-2 2H8a2 2 0 01-2-2v-3.27A2 2 0 015 13v-1a2 2 0 012-2h1.5L10 6H9a1 1 0 010-2h2V3a1 1 0 011-1z"/>
+        </svg>
+      )
+    case 'food':
+      return (
+        <svg {...props}>
+          <path d="M3 14h18M5 14c0 4 3 7 7 7s7-3 7-7M8 14V8c0-1.5-2-3-2-5M12 14V4M16 14V8c0-1.5 2-3 2-5"/>
+        </svg>
+      )
+    case 'terminal':
+      return (
+        <svg {...props}>
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M6 9l3 3-3 3M13 16h5"/>
+        </svg>
+      )
+    default:
+      return (
+        <svg {...props}>
+          <path d="M3 7l4-4 4 4M7 3v13M17 21l4-4-4-4M21 17H8"/>
+        </svg>
+      )
+  }
+}
+
 function Projects() {
   return (
     <section id="projects" style={{ padding: '6rem 2rem', maxWidth: 1100, margin: '0 auto' }}>
@@ -564,9 +598,7 @@ function Projects() {
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)' }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-              <svg width="32" height="32" fill="none" stroke="var(--accent)" strokeWidth="1.5" viewBox="0 0 24 24">
-                <path d="M3 7l4-4 4 4M7 3v13M17 21l4-4-4-4M21 17H8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ProjectIcon type={project.icon} />
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <span style={{ color: 'var(--muted)', fontFamily: 'monospace', fontSize: 12 }}>{project.period}</span>
                 {project.live && (
