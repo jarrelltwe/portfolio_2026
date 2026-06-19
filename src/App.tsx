@@ -58,9 +58,9 @@ const PROJECTS = [
   {
     name: 'Chess Coach',
     period: '2026',
-    tags: ['Next.js', 'TypeScript', 'Stockfish', 'Claude'],
+    tags: ['Next.js', 'TypeScript', 'Stockfish WASM', 'Claude AI', 'Tailwind'],
     description:
-      'Pulls Chess.com games into an interactive analysis tool where Stockfish evaluates every move and Claude explains mistakes in plain English. Includes move grading, eval bar, best-move arrows, keyboard navigation, and on-demand coaching for tactical and positional errors.',
+      'Chess improvement platform powered by Stockfish (in-browser WASM) and Claude. Load games from Chess.com, Lichess, or PGN and get every move graded with an interactive eval bar, best-move arrows, and threat overlays. Claude explains mistakes in plain English and answers free-form coaching questions. Features opening drills with bot play, spaced-repetition puzzles generated from your own blunders, stats dashboards with AI weakness summaries, Guess the Move mode, and chess principle detection across your games.',
     github: 'https://github.com/jarrelltwe/chess-coach',
     live: 'https://chess-coach-sandy.vercel.app',
   },
