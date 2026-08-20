@@ -56,6 +56,16 @@ const EXPERIENCE = [
 
 const PROJECTS = [
   {
+    name: 'FPL Assistant',
+    period: '2026',
+    tags: ['Next.js', 'TypeScript', 'FPL API', 'Supabase', 'Claude AI'],
+    description:
+      'An explainable Fantasy Premier League decision system built for the 2026/27 season. It turns live player, fixture, price, availability, and historical performance data into expected-minutes and scoring-event projections, then optimizes a legal squad, starting XI, bench, captaincy, transfers, and chip strategy. Includes private saved squads, FPL team imports, deadline-aware refreshes, plan-change alerts, evidence-grounded AI analysis, and a backtesting framework for promoting model improvements only when they clear statistical guardrails.',
+    icon: 'football',
+    github: 'https://github.com/jarrelltwe/fpl-assistant',
+    live: null,
+  },
+  {
     name: 'Chess Coach',
     period: '2026',
     tags: ['Next.js', 'TypeScript', 'Stockfish WASM', 'Claude AI', 'Tailwind'],
@@ -556,6 +566,13 @@ function Experience() {
 function ProjectIcon({ type }: { type: string }) {
   const props = { width: 32, height: 32, fill: 'none', stroke: 'var(--accent)', strokeWidth: 1.5, viewBox: '0 0 24 24', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const }
   switch (type) {
+    case 'football':
+      return (
+        <svg {...props}>
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M9.5 8.5L12 6.7l2.5 1.8-.9 3H10.4l-.9-3zM10.4 11.5l-3.2 2.3.8 3.1M13.6 11.5l3.2 2.3-.8 3.1M9.5 8.5L6.7 7.4M14.5 8.5l2.8-1.1M8 16.9l4 2 4-2"/>
+        </svg>
+      )
     case 'chess':
       return (
         <svg {...props}>
